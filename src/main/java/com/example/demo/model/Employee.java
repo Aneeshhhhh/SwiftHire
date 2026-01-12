@@ -14,13 +14,17 @@ public class Employee{
 
     private String name;
     private String profession;
+    private int age;
+    private double salary;
 
     public Employee(){}
 
-    public Employee(long Id, String name, String profession){
+    public Employee(long Id, String name, String profession, int age, double salary){
         this.Id = Id;
         this.name=name;
         this.profession=profession;
+        this.age=age;
+        this.salary=salary;
     }
 
     public long getId(){
@@ -28,6 +32,12 @@ public class Employee{
     }
     public void setId(long Id){
         this.Id=Id;
+    }
+    public void setAge(int age){
+        this.age=age;
+    }
+    public int getAge(){
+        return age;
     }
 
     public String getName(){
@@ -42,6 +52,12 @@ public class Employee{
     }
     public void setProfession(String profession){
         this.profession=profession;
+    }
+    public double getSalary(){
+        return salary;
+    }
+    public void setSalary(double salary){
+        this.salary=salary;
     }
 
 
