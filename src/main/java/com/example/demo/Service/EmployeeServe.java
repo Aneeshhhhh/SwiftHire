@@ -11,38 +11,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Service
-public class bookserve {
+public class EmployeeServe {
 
-    private final EmployeeRepo bookRepo;
+    private final EmployeeRepo employeeRepo;
 
     @Autowired
-    public bookserve(EmployeeRepo bookRepo){
-        this.bookRepo=bookRepo;
+    public EmployeeServe(EmployeeRepo employeeRepo){
+        this.employeeRepo=employeeRepo;
     }
 
-    public Employee addbook(Employee book){
-        return bookRepo.save(book);
+    public Employee addprofile(Employee profile){
+        return employeeRepo.save(profile);
     }
 
-    public void deleteBook(Long id){
-        bookRepo.deleteById(id);
+    public void deleteProfile(Long id){
+        employeeRepo.deleteById(id);
     }
 
     public List<Employee> getEmAll(){
-        return bookRepo.findAll();
+        return employeeRepo.findAll();
     }
 
     public Employee findIt(Long id){
-        return bookRepo.findById(id).get();
-
+        return employeeRepo.findById(id).get();
     }
 
-    public Employee updateBook(Long id, Employee bookDetail){
-        Employee book= bookRepo.findById(id).get();
-        book.setTitle(bookDetail.getTitle());
-        book.setAuthor(bookDetail.getAuthor());
+    public Employee updateProfile(Long id, Employee profileDetail){
+        Employee employee= employeeRepo.findById(id).get();
+        employee.setName(profileDetail.getName());
+        employee.setProfession(profileDetail.getProfession());
+        employee.setAge(profileDetail.getAge());
+        employee.setSalary(profileDetail.getSalary());
 
-        return bookRepo.save(book);
+        return employeeRepo.save(employee);
     }
 
 }

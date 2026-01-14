@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface EmployeeRepo extends JpaRepository<Employee, Long>{
     List<Employee> findByProfession(String profession);
-    List<Employee> findByAgeGreaterThanEmployee(int age);
-    List<Employee> findBySalaryBetweenEmployees(double minSalary, double maxSalary);
+    List<Employee> findByAgeGreaterThan(int age);
+    List<Employee> findBySalaryBetween(double minSalary, double maxSalary);
     List<Employee> findByNameContaining(String substring);
-    List<Employee> findByAgeBetweenEmployees(int minAge, int maxAge);
+    List<Employee> findByAgeBetween(int minAge, int maxAge);
 }
