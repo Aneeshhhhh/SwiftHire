@@ -32,6 +32,10 @@ public class EmployeeServe {
         return employeeRepo.findAll();
     }
 
+    public List<Employee> getByProfession(String profession){
+        return employeeRepo.findByProfession(profession);
+    }
+
     public Employee findIt(Long id){
         return employeeRepo.findById(id).get();
     }

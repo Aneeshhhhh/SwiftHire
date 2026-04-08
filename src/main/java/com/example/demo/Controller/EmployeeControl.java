@@ -38,6 +38,12 @@ public class EmployeeControl {
         return ResponseEntity.ok(employees);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<Employee>> searchByProfession(@RequestParam String profession){
+        List<Employee> employees = employeeServe.getByProfession(profession);
+        return ResponseEntity.ok(employees);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEmployee(@PathVariable Long id){
         employeeServe.deleteProfile(id);
